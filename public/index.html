@@ -1,1 +1,47 @@
-<h3>ioooo index.html works :P</h3>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Optical character analyser</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="/style.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-2">
+                    <h4>Enter text</h4>
+                    <textarea id="text"></textarea>
+                </div>
+                <div class="col-xs-2">
+                    <h4>Select font</h4>
+                    <select>
+                        <option>AcadNusx</option>
+                        <option>AcadNusx</option>
+                        <option>AcadNusx</option>
+                    </select>
+                </div>
+                <div class="col-xs-2">
+                    <h4>Select size</h4>
+                    <select>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                    </select>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    <br>
+                    <button class="btn btn-primary" id="generate">Generate</button>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    <canvas id="text-image" width="750px" height="200px"></canvas>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    // output will be here
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="/script.js"></script>
+    </body>
+</html>

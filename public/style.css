@@ -1,0 +1,13 @@
+html, body {
+    margin: 0px;
+}
+
+textarea {
+    display: block;
+    width: 100%
+}
+
+canvas {
+    border: 2px solid black;
+    margin: 10px 0;
+}
