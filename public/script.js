@@ -5,9 +5,9 @@ function drawTextOnCanvas(text) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.font = "30px Arial";
+    ctx.font = $('#font-size').val() + ' "' + $('#font-family').val() + '"';
     ctx.fillStyle = '#000';
-    ctx.fillText(text, 10, 50);
+    ctx.fillText(text, 10, 30);
 }
 
 function getImage() {
@@ -25,7 +25,7 @@ $(document).ready(function () {
                 image: getImage()
             }
         }).done(function(o) {
-            console.log('saved');
+
         });
     });
 });

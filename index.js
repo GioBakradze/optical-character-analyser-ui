@@ -8,13 +8,17 @@ app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
 
 app.post('/process', function (req, res) {
-    fs.writeFile("images/image.jpg", req.body.image.replace(/^data:image\/jpeg;base64,/, ""), 'base64', function(err) {
-        if (err) {
-            res.status(501).send('server error');
-        } else {
-            res.status(200).send('ok');
-        }
-    });
+    fs.writeFile(
+        "./images/image-" + new Date().getTime() + ".jpg",
+        req.body.image.replace(/^data:image\/jpeg;base64,/, ""),
+        'base64',
+        function(err) {
+            if (err) {
+                res.status(501).send(err);
+            } else {
+                res.status(200).send('ok');
+            }
+        });
 });
 
 app.get('*', function (req, res) {

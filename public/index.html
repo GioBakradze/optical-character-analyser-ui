@@ -3,10 +3,16 @@
     <head>
         <title>Optical character analyser</title>
         <link rel="stylesheet" type="text/css" media="screen" href="/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/fonts/bpg-square-master/css/bpg-square.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="/fonts/bpg-nino-mtavruli-master/css/bpg-nino-mtavruli.min.css">
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
 
     <body>
+        <!-- trick to preload font for canvas -->
+        <div style="font-family: 'BPG Square', 'BPG Nino Mtavruli'"></div>
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-4 col-xs-offset-2">
@@ -15,18 +21,18 @@
                 </div>
                 <div class="col-xs-2">
                     <h4>Select font</h4>
-                    <select>
-                        <option>AcadNusx</option>
-                        <option>AcadNusx</option>
-                        <option>AcadNusx</option>
+                    <select id="font-family">
+                        <option>Sylfaen</option>
+                        <option>BPG Square</option>
+                        <option>BPG Nino Mtavruli</option>
                     </select>
                 </div>
                 <div class="col-xs-2">
                     <h4>Select size</h4>
-                    <select>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
+                    <select id="font-size">
+                        <option>15px</option>
+                        <option>20px</option>
+                        <option>30px</option>
                     </select>
                 </div>
                 <div class="col-xs-8 col-xs-offset-2">
@@ -34,7 +40,7 @@
                     <button class="btn btn-primary" id="generate">Generate</button>
                 </div>
                 <div class="col-xs-8 col-xs-offset-2">
-                    <canvas id="text-image" width="750px" height="200px"></canvas>
+                    <canvas id="text-image" width="750px" height="100px"></canvas>
                 </div>
                 <div class="col-xs-8 col-xs-offset-2">
                     // output will be here
