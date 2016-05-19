@@ -16,7 +16,7 @@ function getImage() {
 
 $(document).ready(function () {
     $("#generate").click(function () {
-        drawTextOnCanvas($("#text").val());
+        drawTextOnCanvas($("#text").val().split(' ').join('   '));
 
         $.ajax({
             type: "POST",
@@ -25,7 +25,8 @@ $(document).ready(function () {
                 image: getImage()
             }
         }).done(function(o) {
-
+            $('#output').html(o.text);
+            $('#skeleton-image').attr('src', '/generated/' + o.image + '.jpg');
         });
     });
 });

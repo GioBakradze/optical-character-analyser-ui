@@ -11,3 +11,12 @@ canvas {
     border: 2px solid black;
     margin: 10px 0;
 }
+
+#skeleton-image {
+    border: 2px solid black;
+    margin-bottom: 25px;
+}
+
+#output {
+    font-size: 18px;
+}

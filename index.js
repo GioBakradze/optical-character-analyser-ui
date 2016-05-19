@@ -27,11 +27,16 @@ app.post('/process', function (req, res) {
                         res.status(501).send(stderr);
                     } else {
 
-                        fs.readFile('./analyser/outputs/' + Number(stdout) + '.txt', 'utf8', function (err, data) {
+                        fs.readFile('./analyser/outputs/' + Number(stdout.split(' ')[0]) + '.txt', 'utf8', function (err, data) {
                             if (err) {
                                 res.status(501).send(err);
                             } else {
-                                res.status(200).send(data);
+                                fs.createReadStream('./analyser/outputs/' + Number(stdout.split(' ')[1]) + '.jpg')
+                                    .pipe(fs.createWriteStream('./public/generated/' + Number(stdout.split(' ')[1]) + '.jpg'));
+                                res.status(200).send({
+                                    text: data,
+                                    image: Number(stdout.split(' ')[1])
+                                });
                             }
                         });
                     }
